@@ -5,12 +5,35 @@
 According to [GIA's grading system](https://www.gia.edu/diamond-quality-factor), a diamond is described and classified based on the four Cs: Carat, Colour, Clarity and Cut. Here we analyze diamond price using a [dataset from Kaggle](https://www.kaggle.com/shivam2503/diamonds), which included the four C’s, in addition to depth and table size, of 53940 diamonds. The analysis includes retrieving data from a CSV file, data mining, analytics, modelling and data visualization. The analysis is based in Python and uses Numpy and panda for data manipulation, seaborn and matplotlib for creating visualizations, and Scikit-Learn for construction and evaluation of regression models.
 
 
+## Data Cleaning
+1. Removed irrelevant column 'Unnamed: 0'.
+2. Removed duplicated rows.
+3. Removed zero values in columns 'x', 'y' and 'z' (length, width and height of diamonds).
+4. Discarded outliers more than 3 standard deviations away from mean.
+
+## Data Exploration
+1. Summary statistics (mean, standard deviation, mininimum, 25% quartile, 50% quartile, 75% quartile, maximum), coefficient of variation and skewness of numerical features.
+2. Summary statistics (number of unique variables, mode, frequency of mode) and names of unique categorical variables.
+3. Pearson correlation between numerical features.
+4. Distribution of numerical features (histogram, KDE).
+5. Distribution of categorical variables (category plot, violin plot, KDE plot).
+
+## Feature engineering
+Compared using all 9 features and only 6 features (all except 'x', 'y', 'z', i.e. length, width and depth of diamonds) for 5 machine learning algorithms (Linear Regression, K-Nearest Neighbor, Decision Tree, Random Forest, Support Vector Machine).
+
+For the best two algorithms, Decision Tree and Random Forest, there was little change in root mean squared error upon removing the 3 features 'x','y' and 'z' (length, width and depth of diamonds). As removing these 3 features has the advantages of eliminating multicollinearity and reducing model complexity, we used only 6 features, i.e. all features except 'x', 'y' and 'z', when developing the final model.
+
+## Hyperparameter optimization
+Optimized the hyperparameters of the three best algorithms, Random Forest, Decision Tree and K-Nearest Neighobur, by visualizing the optimal values of selected hyperparameters then fine tuning using Random Search.
+
 ## Conclusion
 
-The highest accuracy was attained by the optimized Random Forest algorithm, which provided a test mean squared error of 308304.13 and R^2 of 0.98. On average, the diamond price predicted by the model deviated from the actual price by only 303.45 dollars. Feature importance analysis revealed Carat was by far the most importance feature for diamond price prediction. 
+Decision Tree algorithm was most robust and provided a test root mean squared error of 506.60 and R^2 of 0.98. The diamond price predicted by the model deviated from the actual price by only 289.73 dollars on average.
 
-<img src="RF_predictions.png" height="250" />
-Figure 1. The predicated price provided by the Random Forest algorithm closely resembled the actual price.
+Random Forest algorithm was the second best and provided a test root mean squared error of 556.74 and R^2 of 0.97. Feature importance analysis revealed 'carat' was by far the most importance feature for diamond price prediction. 'Clarity' and 'color' were the second and third most important features respectively.
+
+<img src="DT_predictions.png" height="250" />
+Figure 1. The predicated price provided by the Decision Tree algorithm closely resembled the actual price.
 
 <img src="RF_importance.png" height="250" />
 Figure 2. Feature important analysis of the best Random Forest model revealed Carat was the most importance feature for diamond price prediction. Clarity and Color were the second and third most important features respectively.
