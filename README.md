@@ -6,6 +6,7 @@ According to [GIA's grading system](https://www.gia.edu/diamond-quality-factor),
 
 
 ## Data Cleaning
+The [original dataset](diamond.csv) contained 10 features and the price for 53940 diamonds. The cleaned dataset contained 9 features for 51049 diamonds.
 1. Removed irrelevant column 'Unnamed: 0'.
 2. Removed duplicated rows.
 3. Removed zero values in columns 'x', 'y' and 'z' (length, width and height of diamonds).
