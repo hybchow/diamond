@@ -2,7 +2,9 @@
 
 ## Summary
 
-According to [GIA's grading system](https://www.gia.edu/diamond-quality-factor), a diamond is described and classified based on the four Cs: Carat, Colour, Clarity and Cut. Here we analyze diamond price using a [dataset from Kaggle](https://www.kaggle.com/shivam2503/diamonds), which included the four C’s, in addition to depth and table size, of 53940 diamonds. The analysis includes retrieving data from a CSV file, data mining, analytics, modelling and data visualization. The analysis is based in Python and uses Numpy and panda for data manipulation, seaborn and matplotlib for creating visualizations, and Scikit-Learn for construction and evaluation of regression models.
+Diamonds are described and classified based on the [four Cs](https://www.gia.edu/diamond-quality-factor): Carat, Colour, Clarity and Cut. Here we analyze diamond price using a [dataset from Kaggle](https://www.kaggle.com/shivam2503/diamonds) based on the four C’s, total depth percentage, table size, length, width and depth of 51049 diamonds. Five Machine Learning algorithms (Linear Regression, K-Nearest Neighbor, Decision Tree, Random Forest, Support Vector Machine) in combination with feature engineering (all 9 features vs. 6 selected features) were compared.
+
+The analysis was performed using Python and included retrieving data from a CSV file, data mining, analytics, modelling and data visualization. Numpy and panda were used for data manipulation, seaborn and matplotlib for creating visualizations, and Scikit-Learn for construction and evaluation of regression models.
 
 
 ## Data Cleaning
@@ -29,9 +31,9 @@ Optimized the hyperparameters of the three best algorithms, Random Forest, Decis
 
 ## Conclusion
 
-Decision Tree algorithm was most robust and provided a test root mean squared error of 506.60 and R^2 of 0.98. The diamond price predicted by the model deviated from the actual price by only 289.73 dollars on average.
+Decision Tree was the most robust algorithm and provided a test root mean squared error of 506.60 and R^2 of 0.98. The price of each diamond predicted by the model deviated from the actual price by only 289.73 dollars on average.
 
-Random Forest algorithm was the second best and provided a test root mean squared error of 556.74 and R^2 of 0.97. Feature importance analysis revealed 'carat' was by far the most importance feature for diamond price prediction. 'Clarity' and 'color' were the second and third most important features respectively.
+Random Forest was the second best algorithm and provided a test root mean squared error of 556.74 and R^2 of 0.97. Feature importance analysis revealed 'carat' was by far the most importance feature for diamond price prediction. 'Clarity' and 'color' were the second and third most important features respectively.
 
 <img src="DT_predictions.png" height="250" />
 Figure 1. The predicated price provided by the Decision Tree algorithm closely resembled the actual price.
