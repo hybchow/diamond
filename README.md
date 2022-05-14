@@ -31,7 +31,7 @@ Optimized the hyperparameters of the three best algorithms, Random Forest, Decis
 
 ## Conclusion
 
-Decision Tree was the most robust algorithm and provided a test root mean squared error of 506.60 and R^2 of 0.98. The price of each diamond predicted by the model deviated from the actual price by only 289.73 dollars on average.
+Decision Tree was the most robust algorithm and provided a test root mean squared error of 506.60 and R^2 of 0.98. The price of each diamond predicted by the model deviated from the actual price by only 289.73 dollars (approximately 8% of average diamond price) on average.
 
 Random Forest was the second best algorithm and provided a test root mean squared error of 556.74 and R^2 of 0.97. Feature importance analysis revealed 'carat' was by far the most importance feature for diamond price prediction. 'Clarity' and 'color' were the second and third most important features respectively.
 
